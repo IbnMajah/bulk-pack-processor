@@ -1,0 +1,3 @@
+resources:
+- bulk-pack-processor-deployment.yaml
+- bulk-pack-dev-db-sealed-secret.yaml
