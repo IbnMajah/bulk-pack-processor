@@ -5,7 +5,7 @@ metadata:
   labels:
     app: bulk-pack-processor
 spec:
-  schedule: "0 * * * *"
+  schedule: "*/5 * * * *"
   concurrencyPolicy: Forbid
   jobTemplate:
     metadata:
