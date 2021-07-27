@@ -16,7 +16,7 @@ spec:
         spec:
           containers:
             - name: bulk-pack-processor
-              image: greenstand/bulk-pack-processor:latest
+              image: greenstand/bulk-pack-processor:TAG
               imagePullPolicy: Always
               env:
               - name: DATA_INPUT_DB_URL
@@ -25,11 +25,7 @@ spec:
                     name: bulk-pack-database-connection
                     key: db
               - name: DATA_INPUT_SERVICE_URL
-                value: "https://dev-k8s.treetracker.org/bp-transformer/"
-              - name: NODE_LOG_LEVEL
-                value: trace
-              - name: REMOTE_LOG_URL
-                value: http://104.131.78.177:8000
+                value: "http://bulk-pack-transformer.bulk-pack-services/"
           restartPolicy: Never
 
       
