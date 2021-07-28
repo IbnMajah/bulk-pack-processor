@@ -3,10 +3,7 @@ name: Service CI/CD Pipeline
 on:
   push:
     branches:
-      - master
-  pull_request:
-    branches:
-      - master
+      - main
 
 env:
   project-directory: ./
