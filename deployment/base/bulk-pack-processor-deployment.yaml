@@ -17,7 +17,7 @@ spec:
           containers:
             - name: bulk-pack-processor
               image: greenstand/bulk-pack-processor:TAG
-              imagePullPolicy: Always
+              imagePullPolicy: IfNotPresent
               env:
               - name: DATA_INPUT_DB_URL
                 valueFrom:
