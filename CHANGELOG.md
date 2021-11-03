@@ -1,3 +1,18 @@
+# [1.1.0](https://github.com/Greenstand/bulk-pack-processor/compare/v1.0.1...v1.1.0) (2021-11-03)
+
+
+### Bug Fixes
+
+* only need base deployment, no overlays ([3faeca0](https://github.com/Greenstand/bulk-pack-processor/commit/3faeca0574cab7e6ea13cfbaf26e105accc2357b))
+* upgrade to node 16 ([0fdf420](https://github.com/Greenstand/bulk-pack-processor/commit/0fdf420c4c6fb5b810d8a120db51c61970e90363))
+* upgrade to node 16 ([c2c0168](https://github.com/Greenstand/bulk-pack-processor/commit/c2c0168d00e0afc1207144f332d68fe2b119582f))
+* use image pull policy IfNotPresent ([36bf6e0](https://github.com/Greenstand/bulk-pack-processor/commit/36bf6e04c1b6cf2700fa6cc29dc8ebd24fa98c0e))
+
+
+### Features
+
+* upgrade to node 16 ([a25bf3f](https://github.com/Greenstand/bulk-pack-processor/commit/a25bf3f3cc8b19b9ebd3218fc383d51760340945))
+
 ## [1.0.1](https://github.com/Greenstand/bulk-pack-processor/compare/v1.0.0...v1.0.1) (2021-07-28)
 
 
