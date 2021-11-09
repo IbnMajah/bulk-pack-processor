@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.0...v1.1.1) (2021-11-09)
+
+
+### Bug Fixes
+
+* correct path to app in docker file ([1cc45f0](https://github.com/Greenstand/bulk-pack-processor/commit/1cc45f0a60a6e3eb0ca795aa7a9550087069f7c2))
+
 # [1.1.0](https://github.com/Greenstand/bulk-pack-processor/compare/v1.0.1...v1.1.0) (2021-11-03)
 
 
