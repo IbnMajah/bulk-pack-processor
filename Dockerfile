@@ -5,4 +5,5 @@ COPY package.json ./
 COPY package-lock.json ./
 RUN npm ci 
 COPY . ./
-CMD [ "node", "." ]
+RUN ["chmod", "+x", "/app/process-bulk-uploads.sh"]
+CMD [ "/app/process-bulk-uploads.sh" ]
