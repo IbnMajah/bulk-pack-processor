@@ -6,6 +6,7 @@ metadata:
     app: bulk-pack-processor
 spec:
   schedule: "*/5 * * * *"
+  startingDeadlineSeconds: 200
   concurrencyPolicy: Forbid
   jobTemplate:
     metadata:
@@ -27,6 +28,3 @@ spec:
               - name: DATA_INPUT_SERVICE_URL
                 value: "http://bulk-pack-transformer.bulk-pack-services/"
           restartPolicy: Never
-          startingDeadlineSeconds: 200
-
-      
