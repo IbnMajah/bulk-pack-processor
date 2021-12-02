@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.2...v1.1.3) (2021-12-02)
+
+
+### Bug Fixes
+
+* put startingDeadlineSeconds into the right place ([70a0f67](https://github.com/Greenstand/bulk-pack-processor/commit/70a0f67d0cd07f5f102e73ad70de7f1bb7aa71ba))
+
 ## [1.1.2](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.1...v1.1.2) (2021-12-02)
 
 
