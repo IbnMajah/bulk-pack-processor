@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.1...v1.1.2) (2021-12-02)
+
+
+### Bug Fixes
+
+* add startingDeadlineSeconds to spec with a default value ([cbf5e0b](https://github.com/Greenstand/bulk-pack-processor/commit/cbf5e0bbc7904a89d5958955572efbc1fc3df853))
+
 ## [1.1.1](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.0...v1.1.1) (2021-11-09)
 
 
