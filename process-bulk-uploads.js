@@ -52,6 +52,7 @@ const pool = new Pool({
     if(bulkData.devices != null){
 
       for(let device of bulkData.devices){
+        console.log('device');
       //  console.log(device);
 
         var options = {
@@ -70,6 +71,7 @@ const pool = new Pool({
 
 
     try {
+      console.log('put devices');
       const result2 = await Promise.all(requests);
       //console.log(result2);
     } catch (e) {
@@ -81,6 +83,7 @@ const pool = new Pool({
 
     if(bulkData.trees != null){
       for(let tree of bulkData.trees){
+        console.log('tree');
         //console.log(tree);
 
         var options = {
@@ -99,6 +102,7 @@ const pool = new Pool({
 
 
     try {
+      console.log('put trees');
       const result3 = await Promise.all(requests);
       //console.log(result3);
     } catch (e) {
@@ -116,6 +120,7 @@ const pool = new Pool({
       WHERE id = $1`,
       values: [row.id]
     };
+    console.log('update');
     const rvalUpdate = await pool.query(update);
     console.log(`Processed bulk tree upload ${row.id}`);
 
