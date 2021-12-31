@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.4...v1.1.5) (2021-12-31)
+
+
+### Bug Fixes
+
+* update affinity to use the microservices node pool ([55f6b4f](https://github.com/Greenstand/bulk-pack-processor/commit/55f6b4f033f600b38f29c10e004e7dad89d0666c))
+
 ## [1.1.4](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.3...v1.1.4) (2021-12-31)
 
 
