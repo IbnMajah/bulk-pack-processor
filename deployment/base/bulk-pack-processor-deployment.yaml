@@ -15,6 +15,15 @@ spec:
     spec:
       template:
         spec:
+          affinity:
+            nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                - matchExpressions:
+                  - key: doks.digitalocean.com/node-pool
+                    operator: In
+                    values:
+                    - microservices-node-pool
           containers:
             - name: bulk-pack-processor
               image: greenstand/bulk-pack-processor:TAG
