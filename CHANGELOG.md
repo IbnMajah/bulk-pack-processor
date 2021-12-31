@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.5...v1.1.6) (2021-12-31)
+
+
+### Bug Fixes
+
+* add some more detailed debug messaging ([c950362](https://github.com/Greenstand/bulk-pack-processor/commit/c95036294399591acca3ac9bab5a06cb572b1f3e))
+
 ## [1.1.5](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.4...v1.1.5) (2021-12-31)
 
 
