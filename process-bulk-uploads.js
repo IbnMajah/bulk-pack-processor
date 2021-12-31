@@ -73,7 +73,8 @@ const pool = new Pool({
     try {
       console.log('put devices');
       const result2 = await Promise.all(requests);
-      //console.log(result2);
+      console.log('done with devices put');
+      console.log(result2);
     } catch (e) {
       console.log(e)
       continue;
