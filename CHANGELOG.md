@@ -1,3 +1,10 @@
+## [1.1.8](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.7...v1.1.8) (2022-01-20)
+
+
+### Bug Fixes
+
+* force deployment ([c54badf](https://github.com/Greenstand/bulk-pack-processor/commit/c54badf43434a4514669ef7374827164ad6a3e97))
+
 ## [1.1.7](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.6...v1.1.7) (2022-01-20)
 
 
