@@ -19,23 +19,25 @@ spec:
             nodeAffinity:
               requiredDuringSchedulingIgnoredDuringExecution:
                 nodeSelectorTerms:
-                - matchExpressions:
-                  - key: doks.digitalocean.com/node-pool
-                    operator: In
-                    values:
-                    - microservices-node-pool
+                  - matchExpressions:
+                      - key: doks.digitalocean.com/node-pool
+                        operator: In
+                        values:
+                          - microservices-node-pool
           containers:
             - name: bulk-pack-processor
               image: greenstand/bulk-pack-processor:TAG
               imagePullPolicy: IfNotPresent
               env:
-              - name: DATA_INPUT_DB_URL
-                valueFrom:
-                  secretKeyRef:
-                    name: bulk-pack-database-connection
-                    key: db
-              - name: DATA_INPUT_SERVICE_URL
-                value: "http://bulk-pack-transformer.bulk-pack-services/"
+                - name: DATA_INPUT_DB_URL
+                  valueFrom:
+                    secretKeyRef:
+                      name: bulk-pack-database-connection
+                      key: db
+                - name: DATA_INPUT_SERVICE_URL
+                  value: "http://bulk-pack-transformer.bulk-pack-services/"
+                - name: DATA_INPUT_SERVICE_URL_V2
+                  value: "http://bulk-pack-transformer-v2.bulk-pack-services/"
           restartPolicy: Never
           imagePullSecrets:
             - name: greenstand-docker-secret
