@@ -45,5 +45,11 @@
     "sinon": "^9.0.3",
     "sinon-chai": "^2.14.0",
     "supertest": "^4.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "npm run eslint"
+    }
   }
 }
