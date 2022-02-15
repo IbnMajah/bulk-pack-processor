@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.8...v1.2.0) (2022-02-15)
+
+
+### Bug Fixes
+
+* add husky ([2a7a0ba](https://github.com/Greenstand/bulk-pack-processor/commit/2a7a0bac3542ec43f023169036b1de01541ddb1a))
+
+
+### Features
+
+* add bulk pack v2 updates ([087e1a5](https://github.com/Greenstand/bulk-pack-processor/commit/087e1a58c7dcba82944df4ac69815ecf3c18f057))
+
 ## [1.1.8](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.7...v1.1.8) (2022-01-20)
 
 
