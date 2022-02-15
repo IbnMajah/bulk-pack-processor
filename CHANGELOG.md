@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.0...v1.2.1) (2022-02-15)
+
+
+### Bug Fixes
+
+* use string for pack format version ([12a36c4](https://github.com/Greenstand/bulk-pack-processor/commit/12a36c42c37761407615351fe278b714890cec50))
+
 # [1.2.0](https://github.com/Greenstand/bulk-pack-processor/compare/v1.1.8...v1.2.0) (2022-02-15)
 
 
