@@ -1,0 +1,273 @@
+[
+  {
+    "pack_format_version": 2,
+    "id": "le second format",
+    "wallet_registrations": [
+      {
+        "id": "b5fcb38a-fd16-4299-a916-d6fb123d9ec4",
+        "wallet": "3132687369",
+        "user_photo_url": "https://treetracker-production-images.s3.eu-central-1.amazonaws.com/2020.07.21.18.38.41_37.8449304_-122.25714411_348e08db-8fc5-4b67-bb24-eecf294c0dc7_IMG_20200721_183825_8005989450661286921.jpg",
+        "first_name": "matt",
+        "last_name": "oaks",
+        "phone": "12312312",
+        "email": "kolz@obk.com",
+        "lat": 34.84492259,
+        "lon": -122.2571481,
+        "registered_at": "2022-01-30T21:14:33.153Z"
+      },
+      {
+        "id": "ca19e72f-fc00-4263-8357-6237d2bc1dac",
+        "wallet": "3132687369",
+        "user_photo_url": "https://treetracker-production-images.s3.eu-central-1.amazonaws.com/2020.07.21.18.38.41_37.8449304_-122.25714411_348e08db-8fc5-4b67-bb24-eecf294c0dc7_IMG_20200721_183825_8005989450661286921.jpg",
+        "first_name": "matt2",
+        "last_name": "oaks2",
+        "phone": "12312312",
+        "email": "kolz@obk.com",
+        "lat": 37.84492259,
+        "lon": -122.2571481,
+        "registered_at": "2022-01-30T21:14:33.153Z"
+      }
+    ],
+    "device_configurations": [
+      {
+        "id": "9a1e63c9-182d-4066-9685-30081dcdc421",
+        "brand": "google",
+        "model": "Pixel",
+        "device": "sailfish",
+        "serial": "unknown",
+        "hardware": "sailfish",
+        "app_build": "111",
+        "app_version": "1.2.8",
+        "manufacturer": "Google",
+        "os_version": "10",
+        "sdk_version": "28",
+        "device_identifier": "4f4d6a8b6433e4ca",
+        "logged_at": "2022-01-29T21:14:33.153Z"
+      },
+      {
+        "id": "46138aea-d2d8-43dd-8415-990e7c43a42a",
+        "brand": "google",
+        "model": "Pixel",
+        "device": "sailfish",
+        "serial": "unknown",
+        "hardware": "sailfish",
+        "app_build": "111",
+        "app_version": "1.2.8",
+        "manufacturer": "Google",
+        "os_version": "11",
+        "sdk_version": "28",
+        "device_identifier": "4f4d6a8b6433e4ca",
+        "logged_at": "2022-01-29T21:14:33.153Z"
+      }
+    ],
+    "sessions": [
+      {
+        "id": "74e0e5be-5b83-46dc-b0e2-8691d2916eec",
+        "device_configuration_id": "9a1e63c9-182d-4066-9685-30081dcdc421",
+        "originating_wallet_registration_id": "b5fcb38a-fd16-4299-a916-d6fb123d9ec4",
+        "check_in_photo_url": "https://checkin.com",
+        "target_wallet": "somewallet",
+        "organization": "string",
+        "track_url": "https://checkin.com"
+      },
+      {
+        "id": "b680ecaf-adfe-4d33-994a-96016aeca232",
+        "device_configuration_id": "46138aea-d2d8-43dd-8415-990e7c43a42a",
+        "originating_wallet_registration_id": "ca19e72f-fc00-4263-8357-6237d2bc1dac",
+        "check_in_photo_url": "https://checkin.com",
+        "target_wallet": "somewallet",
+        "organization": "string",
+        "track_url": "https://checkin.com"
+      }
+    ],
+    "captures": [
+      {
+        "id": "0836ee24-d96a-4ac2-94bc-d2dbbb7b3b72",
+        "session_id": "74e0e5be-5b83-46dc-b0e2-8691d2916eec",
+        "lat": 37.84492259,
+        "lon": -122.2571481,
+        "gps_accuracy": 12,
+        "note": "noteeee",
+        "image_url": "https://treetracker-production-images.s3.eu-central-1.amazonaws.com/2020.07.21.18.38.46_37.84492259_-122.2571481_42bc5f59-74e2-4c09-b182-ef67bc93d3d1_IMG_20200721_183835_8235710469335931789.jpg",
+        "capture_taken_at": "2022-01-22T21:14:33.153Z",
+        "abs_step_count": 42,
+        "delta_step_count": 35,
+        "rotation_matrix": [1, 2, 3, 4, 5],
+        "extra_attributes": [
+          {
+            "key": "height",
+            "value": "double"
+          },
+          {
+            "key": "dbh",
+            "value": "double"
+          }
+        ]
+      },
+      {
+        "id": "807591cb-edb4-4cb8-9156-a94b24d72dad",
+        "session_id": "b680ecaf-adfe-4d33-994a-96016aeca232",
+        "lat": 37.84492259,
+        "lon": -122.2571481,
+        "gps_accuracy": 12,
+        "note": "noteeee",
+        "image_url": "https://treetracker-production-images.s3.eu-central-1.amazonaws.com/2020.07.21.18.38.46_37.84492259_-122.2571481_42bc5f59-74e2-4c09-b182-ef67bc93d3d1_IMG_20200721_183835_8235710469335931789.jpg",
+        "capture_taken_at": "2022-01-22T21:14:33.153Z",
+        "abs_step_count": 42,
+        "delta_step_count": 35,
+        "rotation_matrix": [1, 2, 3, 4, 5],
+        "extra_attributes": [
+          {
+            "key": "height",
+            "value": "double"
+          },
+          {
+            "key": "dbh",
+            "value": "double"
+          }
+        ]
+      }
+    ],
+    "messages": [
+      {
+        "message_uuid": "3d0c9d19-deb2-413d-b46d-11b81b5ead92",
+        "author_handle": "asd@asd.com",
+        "recipient_handle": "recipient",
+        "body": "This is the first body of the first message",
+        "subject": "This is the first subject of the first message",
+        "composed_at": "2022-01-22T21:14:33.153Z",
+        "survey_id": "094334b0-22ee-478f-bf61-f752a2679ce5",
+        "answers": ["response1", "response2"]
+      },
+      {
+        "message_uuid": "b2810ad2-5510-43ce-88cb-aa7203d7af1f",
+        "author_handle": "asd@asd.com",
+        "recipient_handle": "recipient",
+        "body": "This is the second body of the second message",
+        "subject": "This is the second subject of the second message",
+        "composed_at": "2022-01-22T21:14:33.153Z",
+        "survey_id": "094334b0-22ee-478f-bf61-f752a2679ce5",
+        "answers": ["response2", "response1"]
+      }
+    ]
+  },
+  {
+    "id": "le first format",
+    "registrations": [
+      {
+        "planter_identifier": "717457445",
+        "first_name": "naruto",
+        "last_name": "uzumaki",
+        "phone": null,
+        "email": null,
+        "organization": "team 7",
+        "device_identifier": "448c602f3847ed6b",
+        "record_uuid": "4933417be8ba4482a1b7590a7a8249d9",
+        "image_url": "https://treetracker-test-images.s3.eu-central-1.amazonaws.com/2021.05.05.17.30.58_37.84481550803357_-122.25722830534376_fe061d0c-7912-402c-a8b3-bc8cc677e229_IMG_20210127_152031_2061776106836885603.jpg",
+        "lat": -90,
+        "lon": 44.78
+      },
+      {
+        "planter_identifier": "717457445",
+        "first_name": "naruto",
+        "last_name": "hyuuga",
+        "phone": null,
+        "email": null,
+        "organization": "konoha",
+        "record_uuid": "90368806cefd4a44936fe8e374804ed6",
+        "image_url": "https://treetracker-test-images.s3.eu-central-1.amazonaws.com/2021.05.05.17.30.58_37.84481550803357_-122.25722830534376_fe061d0c-7912-402c-a8b3-bc8cc677e229_IMG_20210127_152031_2061776106836885603.jpg",
+        "device_identifier": "448c602f3847ed6b",
+        "lat": -90,
+        "lon": 44.78
+      }
+    ],
+    "devices": [
+      {
+        "brand": "HUAWEI",
+        "model": "JKM-LX3",
+        "device": "HWJKM-H",
+        "serial": "unknown",
+        "hardware": "kirin710",
+        "app_build": 129,
+        "instanceId": "dbyHiKQSQUaIJSTPMwi-bh",
+        "app_version": "1.4.2",
+        "manufacturer": "HUAWEI",
+        "androidRelease": "9",
+        "androidSdkVersion": 28,
+        "device_identifier": "b994a070c0b09b80"
+      },
+      {
+        "brand": "google",
+        "model": "Pixel 4",
+        "device": "flame",
+        "serial": "unknown",
+        "hardware": "flame",
+        "app_build": 134,
+        "instanceId": "cTaJSsj2QYqom9ph73Y3Ws",
+        "app_version": "1.4.0",
+        "manufacturer": "Google",
+        "androidRelease": "12",
+        "androidSdkVersion": 31,
+        "device_identifier": "448c602f3847ed6b"
+      }
+    ],
+    "trees": [
+      {
+        "lat": 0,
+        "lon": 0,
+        "note": "My Note",
+        "uuid": "416d69ba-8e19-4e12-a62a-79f3f0f915bc",
+        "user_id": 1,
+        "image_url": "https://treetracker-dev-images.s3.eu-central-1.amazonaws.com/2022.01.09.23.36.48_0.0_0.0_08f832dd-080a-4e5e-be62-31b0328771a5_IMG_20220109_232830_2688215598134780956.jpg",
+        "attributes": [
+          {
+            "key": "abs_step_count",
+            "value": "-1"
+          },
+          {
+            "key": "delta_step_count",
+            "value": "0"
+          },
+          {
+            "key": "rotation_matrix",
+            "value": [1, 2, 3, 4, 5]
+          }
+        ],
+        "timestamp": 1641788909,
+        "sequence_id": 3,
+        "gps_accuracy": 0,
+        "device_identifier": "448c602f3847ed6b",
+        "planter_photo_url": "https://treetracker-dev-images.s3.eu-central-1.amazonaws.com/2022.01.09.23.36.44_0.0_0.0_c7c3a2d3-1720-40fc-82e5-6b448c84398f_IMG_20220109_232809_5991583241089076809.jpg",
+        "planter_identifier": "717457445"
+      },
+      {
+        "lat": 0,
+        "lon": 0,
+        "note": "My Note",
+        "uuid": "f69d8d59-9528-43ae-a22a-3fb9b0bb5e43",
+        "user_id": 1,
+        "image_url": "https://treetracker-dev-images.s3.eu-central-1.amazonaws.com/2022.01.09.23.39.08_0.0_0.0_23b97369-e422-453f-9530-09f55ac7c538_IMG_20220109_232831_1163096397114995533.jpg",
+        "timestamp": 1641788909,
+        "attributes": [
+          {
+            "key": "abs_step_count",
+            "value": "-1"
+          },
+          {
+            "key": "delta_step_count",
+            "value": "0"
+          },
+          {
+            "key": "rotation_matrix",
+            "value": [4, 5, 6, 67, 7]
+          }
+        ],
+        "sequence_id": 501,
+        "gps_accuracy": 0,
+        "device_identifier": "448c602f3847ed6b",
+        "planter_photo_url": "https://treetracker-dev-images.s3.eu-central-1.amazonaws.com/2022.01.09.23.36.44_0.0_0.0_c7c3a2d3-1720-40fc-82e5-6b448c84398f_IMG_20220109_232809_5991583241089076809.jpg",
+        "planter_identifier": "717457445"
+      }
+    ]
+  }
+]
