@@ -66,7 +66,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
     console.log(row.id);
     const bulkData = row.bulk_data;
 
-    if (bulkData.pack_format_version === 2) {
+    if (bulkData.pack_format_version === "2") {
       // Version 2
       const wallet_registrations = bulkData.wallet_registrations;
       const device_configurations = bulkData.device_configurations;
