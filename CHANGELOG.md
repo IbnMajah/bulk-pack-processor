@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.1...v1.2.2) (2022-02-16)
+
+
+### Bug Fixes
+
+* account for undefined values ([fb08691](https://github.com/Greenstand/bulk-pack-processor/commit/fb08691d3aa8448a2d9929ba1299f79f61f14a11))
+
 ## [1.2.1](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.0...v1.2.1) (2022-02-15)
 
 
