@@ -73,7 +73,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
       const sessions = bulkData.sessions;
       const captures = bulkData.captures;
       const messages = bulkData.messages;
-      if (wallet_registrations !== null) {
+      if (wallet_registrations?.length) {
         console.log("processing v2 wallet_registrations");
         for (const wallet_registration of wallet_registrations) {
           try {
@@ -86,7 +86,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("v2 wallet_registrations done");
       }
 
-      if (device_configurations !== null) {
+      if (device_configurations?.length) {
         console.log("processing v2 device_configurations");
         for (const device_configuration of device_configurations) {
           try {
@@ -99,7 +99,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("v2 device_configurations done");
       }
 
-      if (sessions !== null) {
+      if (sessions?.length) {
         console.log("processing v2 sessions");
         for (const session of sessions) {
           try {
@@ -112,7 +112,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("v2 sessions done");
       }
 
-      if (captures !== null) {
+      if (captures?.length) {
         console.log("processing v2 captures");
         for (const capture of captures) {
           try {
@@ -125,7 +125,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("v2 captures done");
       }
 
-      if (messages !== null) {
+      if (messages?.length) {
         console.log("v2 messages");
         for (const message of messages) {
           try {
@@ -139,7 +139,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
       }
     } else {
       // Version 1
-      if (bulkData.registrations != null) {
+      if (bulkData.registrations?.length) {
         console.log("processing v1 registrations");
         for (let planter of bulkData.registrations) {
           try {
@@ -152,7 +152,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("v1 registrations done");
       }
 
-      if (bulkData.devices != null) {
+      if (bulkData.devices?.length) {
         console.log("processing v1 devices");
         for (let device of bulkData.devices) {
           try {
@@ -165,7 +165,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("v1 devices done");
       }
 
-      if (bulkData.trees != null) {
+      if (bulkData.trees?.length) {
         console.log("processing v1 trees");
         for (let tree of bulkData.trees) {
           try {
