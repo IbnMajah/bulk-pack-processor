@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.3...v1.2.4) (2022-02-17)
+
+
+### Bug Fixes
+
+* continue to outer loop ([b20e3e5](https://github.com/Greenstand/bulk-pack-processor/commit/b20e3e588c49e7ddfd2b3f506cbe5f7da557958c))
+
 ## [1.2.3](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.2...v1.2.3) (2022-02-17)
 
 
