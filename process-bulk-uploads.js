@@ -62,6 +62,8 @@ const v1Requests = async (data, endpoint, httpVerb) => {
     WHERE processed = FALSE`,
   };
   const rval = await pool.query(query);
+
+  outerLoop:
   for (let row of rval.rows) {
     console.log(row.id);
     const bulkData = row.bulk_data;
@@ -81,7 +83,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(wallet_registration, "wallet_registrations");
           } catch (e) {
             console.log(e);
-            continue;
+            continue outerLoop;
           }
         }
         console.log("v2 wallet_registrations done");
@@ -94,7 +96,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(device_configuration, "device_configurations");
           } catch (e) {
             console.log(e);
-            continue;
+            continue outerLoop;
           }
         }
         console.log("v2 device_configurations done");
@@ -107,7 +109,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(session, "sessions", true);
           } catch (e) {
             console.log(e);
-            continue;
+            continue outerLoop;
           }
         }
         console.log("v2 sessions done");
@@ -120,7 +122,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(capture, "captures");
           } catch (e) {
             console.log(e);
-            continue;
+            continue outerLoop;
           }
         }
         console.log("v2 captures done");
@@ -133,7 +135,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(message, "messages", true);
           } catch (e) {
             console.log(e);
-            continue;
+            continue outerLoop;
           }
         }
         console.log("v2 messages done");
@@ -148,7 +150,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v1Requests(planter, "planter");
           } catch (e) {
             console.log(e);
-            continue;
+            continue outerLoop;
           }
         }
         console.log("v1 registrations done");
@@ -161,7 +163,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v1Requests(device, "device", "PUT");
           } catch (e) {
             console.log(e);
-            continue;
+            continue outerLoop;
           }
         }
         console.log("v1 devices done");
@@ -175,7 +177,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           } catch (e) {
             console.log("tree requests failed");
             console.log(e.message);
-            continue;
+            continue outerLoop;
           }
         }
         console.log("v1 trees done");
