@@ -67,6 +67,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
     const bulkData = row.bulk_data;
 
     if (bulkData.pack_format_version === "2") {
+      console.log("bulk pack format version 2 detected");
       // Version 2
       const wallet_registrations = bulkData.wallet_registrations;
       const device_configurations = bulkData.device_configurations;
@@ -139,6 +140,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
       }
     } else {
       // Version 1
+      console.log("bulk pack format version 1 detected");
       if (bulkData.registrations?.length) {
         console.log("processing v1 registrations");
         for (let planter of bulkData.registrations) {
