@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.4...v1.2.5) (2022-02-21)
+
+
+### Bug Fixes
+
+* log the key of the file being processed ([80f6e5a](https://github.com/Greenstand/bulk-pack-processor/commit/80f6e5a935870ab25fe8f18bd54a512482378f04))
+
 ## [1.2.4](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.3...v1.2.4) (2022-02-17)
 
 
