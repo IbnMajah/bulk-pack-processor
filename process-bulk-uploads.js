@@ -65,7 +65,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
 
   outerLoop:
   for (let row of rval.rows) {
-    console.log(row.id);
+    console.log('processing key: ' + row.key);
     const bulkData = row.bulk_data;
 
     if (bulkData.pack_format_version === "2") {
