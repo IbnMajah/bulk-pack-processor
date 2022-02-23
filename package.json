@@ -17,10 +17,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.0",
     "dotenv": "^8.2.0",
     "pg": "^8.0.3",
-    "request": "^2.88.0",
-    "request-promise-native": "^1.0.7"
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
