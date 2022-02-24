@@ -4,7 +4,7 @@ const {
   dataInputMicroserviceURI,
   dataInputMicroserviceURIV2,
 } = require("./config/config");
-const rp = require("request-promise-native");
+const axios = require("axios").default;
 const { Pool } = require("pg");
 
 const pool = new Pool({
@@ -16,43 +16,54 @@ const pool = new Pool({
 const v2MicroserviceURIV1Endpoints = dataInputMicroserviceURIV2 + "v1/";
 const v1MicroserviceURIV2Endpoints = dataInputMicroserviceURI + "v2/";
 
+const errorHandler = async (err, data) => {
+  if (axios.isAxiosError(err)) {
+    console.log("\n\n\n\n\n===================================");
+    console.log({
+      transformerUrl: err.config.url,
+      data,
+      response: err.response?.data || err.message,
+    });
+    console.log("===================================\n\n\n\n\n");
+  }
+};
+
 const v2Requests = async (data, endpoint, v2Only) => {
   const optionsV2 = {
     method: "POST",
-    uri: dataInputMicroserviceURIV2 + endpoint,
-    body: data,
-    json: true, // Automatically stringifies the body to JSON
+    url: dataInputMicroserviceURIV2 + endpoint,
+    data,
   };
 
   const optionsV1 = {
     ...optionsV2,
-    uri: v1MicroserviceURIV2Endpoints + endpoint,
+    url: v1MicroserviceURIV2Endpoints + endpoint,
   };
 
   // send data to both v1 and v2
-  await rp(optionsV2);
+  await axios(optionsV2);
+
   if (!v2Only) {
-    await rp(optionsV1);
+    await axios(optionsV1);
   }
 };
 
 const v1Requests = async (data, endpoint, httpVerb) => {
   const optionsV1 = {
     method: httpVerb || "POST",
-    uri: dataInputMicroserviceURI + endpoint,
-    body: data,
-    json: true, // Automatically stringifies the body to JSON
+    url: dataInputMicroserviceURI + endpoint,
+    data,
   };
 
   const optionsV2 = {
     ...optionsV1,
     method: httpVerb || "POST",
-    uri: v2MicroserviceURIV1Endpoints + endpoint,
+    url: v2MicroserviceURIV1Endpoints + endpoint,
   };
 
   // send data to both v1 and v2
-  await rp(optionsV2);
-  await rp(optionsV1);
+  await axios(optionsV2);
+  await axios(optionsV1);
 };
 
 (async () => {
@@ -63,9 +74,8 @@ const v1Requests = async (data, endpoint, httpVerb) => {
   };
   const rval = await pool.query(query);
 
-  outerLoop:
-  for (let row of rval.rows) {
-    console.log('processing key: ' + row.key);
+  outerLoop: for (let row of rval.rows) {
+    console.log("processing key: " + row.key);
     const bulkData = row.bulk_data;
 
     if (bulkData.pack_format_version === "2") {
@@ -82,7 +92,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(wallet_registration, "wallet_registrations");
           } catch (e) {
-            console.log(e);
+            errorHandler(e, wallet_registration);
             continue outerLoop;
           }
         }
@@ -95,7 +105,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(device_configuration, "device_configurations");
           } catch (e) {
-            console.log(e);
+            errorHandler(e, device_configuration);
             continue outerLoop;
           }
         }
@@ -108,7 +118,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(session, "sessions", true);
           } catch (e) {
-            console.log(e);
+            errorHandler(e, session);
             continue outerLoop;
           }
         }
@@ -121,7 +131,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(capture, "captures");
           } catch (e) {
-            console.log(e);
+            errorHandler(e, capture);
             continue outerLoop;
           }
         }
@@ -134,7 +144,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(message, "messages", true);
           } catch (e) {
-            console.log(e);
+            errorHandler(e, message);
             continue outerLoop;
           }
         }
@@ -149,7 +159,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v1Requests(planter, "planter");
           } catch (e) {
-            console.log(e);
+            errorHandler(e, planter);
             continue outerLoop;
           }
         }
@@ -162,7 +172,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v1Requests(device, "device", "PUT");
           } catch (e) {
-            console.log(e);
+            errorHandler(e, device);
             continue outerLoop;
           }
         }
@@ -175,8 +185,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v1Requests(tree, "tree");
           } catch (e) {
-            console.log("tree requests failed");
-            console.log(e.message);
+            errorHandler(e, tree);
             continue outerLoop;
           }
         }
