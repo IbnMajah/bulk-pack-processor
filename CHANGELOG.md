@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.6...v1.2.7) (2022-03-01)
+
+
+### Bug Fixes
+
+* process files in creation time order ([3712cbe](https://github.com/Greenstand/bulk-pack-processor/commit/3712cbe42b282c2e8d64ef77d5f4e44d9a036194))
+
 ## [1.2.6](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.5...v1.2.6) (2022-02-28)
 
 
