@@ -70,7 +70,8 @@ const v1Requests = async (data, endpoint, httpVerb) => {
   const query = {
     text: `SELECT *
     FROM bulk_tree_upload
-    WHERE processed = FALSE`,
+    WHERE processed = FALSE
+    ORDER BY KEY ASC`,
   };
   const rval = await pool.query(query);
 
