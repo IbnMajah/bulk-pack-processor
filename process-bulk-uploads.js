@@ -75,7 +75,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
   };
   const rval = await pool.query(query);
 
-  outerLoop: for (let row of rval.rows) {
+  for (let row of rval.rows) {
     console.log("processing key: " + row.key);
     const bulkData = row.bulk_data;
 
@@ -94,7 +94,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(wallet_registration, "wallet_registrations");
           } catch (e) {
             errorHandler(e, wallet_registration);
-            continue outerLoop;
+            continue;
           }
         }
         console.log("v2 wallet_registrations done");
@@ -107,7 +107,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(device_configuration, "device_configurations");
           } catch (e) {
             errorHandler(e, device_configuration);
-            continue outerLoop;
+            continue;
           }
         }
         console.log("v2 device_configurations done");
@@ -120,7 +120,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(session, "sessions", true);
           } catch (e) {
             errorHandler(e, session);
-            continue outerLoop;
+            continue;
           }
         }
         console.log("v2 sessions done");
@@ -133,7 +133,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(capture, "captures");
           } catch (e) {
             errorHandler(e, capture);
-            continue outerLoop;
+            continue;
           }
         }
         console.log("v2 captures done");
@@ -146,7 +146,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v2Requests(message, "messages", true);
           } catch (e) {
             errorHandler(e, message);
-            continue outerLoop;
+            continue;
           }
         }
         console.log("v2 messages done");
@@ -161,7 +161,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v1Requests(planter, "planter");
           } catch (e) {
             errorHandler(e, planter);
-            continue outerLoop;
+            continue;
           }
         }
         console.log("v1 registrations done");
@@ -174,7 +174,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v1Requests(device, "device", "PUT");
           } catch (e) {
             errorHandler(e, device);
-            continue outerLoop;
+            continue;
           }
         }
         console.log("v1 devices done");
@@ -187,7 +187,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
             await v1Requests(tree, "tree");
           } catch (e) {
             errorHandler(e, tree);
-            continue outerLoop;
+            continue;
           }
         }
         console.log("v1 trees done");
