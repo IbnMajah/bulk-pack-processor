@@ -76,6 +76,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
   const rval = await pool.query(query);
 
   for (let row of rval.rows) {
+    let shouldBeProcessed = true;
     console.log("processing key: " + row.key);
     const bulkData = row.bulk_data;
 
@@ -93,6 +94,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(wallet_registration, "wallet_registrations");
           } catch (e) {
+            shouldBeProcessed = false;
             errorHandler(e, wallet_registration);
             continue;
           }
@@ -106,6 +108,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(device_configuration, "device_configurations");
           } catch (e) {
+            shouldBeProcessed = false;
             errorHandler(e, device_configuration);
             continue;
           }
@@ -119,6 +122,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(session, "sessions", true);
           } catch (e) {
+            shouldBeProcessed = false;
             errorHandler(e, session);
             continue;
           }
@@ -132,6 +136,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(capture, "captures");
           } catch (e) {
+            shouldBeProcessed = false;
             errorHandler(e, capture);
             continue;
           }
@@ -145,6 +150,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v2Requests(message, "messages", true);
           } catch (e) {
+            shouldBeProcessed = false;
             errorHandler(e, message);
             continue;
           }
@@ -160,6 +166,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v1Requests(planter, "planter");
           } catch (e) {
+            shouldBeProcessed = false;
             errorHandler(e, planter);
             continue;
           }
@@ -173,6 +180,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v1Requests(device, "device", "PUT");
           } catch (e) {
+            shouldBeProcessed = false;
             errorHandler(e, device);
             continue;
           }
@@ -186,6 +194,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
           try {
             await v1Requests(tree, "tree");
           } catch (e) {
+            shouldBeProcessed = false;
             errorHandler(e, tree);
             continue;
           }
@@ -202,7 +211,9 @@ const v1Requests = async (data, endpoint, httpVerb) => {
       values: [row.id],
     };
     console.log("update");
-    await pool.query(update);
+    if (shouldBeProcessed) {
+      await pool.query(update);
+    }
     console.log(`Processed bulk tree upload ${row.id}`);
   }
   console.log("done");
