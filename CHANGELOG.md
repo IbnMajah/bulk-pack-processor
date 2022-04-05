@@ -1,3 +1,11 @@
+## [1.2.8](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.7...v1.2.8) (2022-04-05)
+
+
+### Bug Fixes
+
+* add boolean flag to confirm whether or not to set processed to true ([53ace9f](https://github.com/Greenstand/bulk-pack-processor/commit/53ace9f7cb0f7b11a5dd573d75d295d8851b8f8e))
+* skip single record with error ([d300fb8](https://github.com/Greenstand/bulk-pack-processor/commit/d300fb8caae3c29687b03b4e75401ab797687035))
+
 ## [1.2.7](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.6...v1.2.7) (2022-03-01)
 
 
