@@ -78,6 +78,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
   for (let row of rval.rows) {
     let shouldBeProcessed = true;
     console.log("processing key: " + row.key);
+    const key = row.key;
     const bulkData = row.bulk_data;
 
     if (bulkData.pack_format_version === "2") {
@@ -92,7 +93,10 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("processing v2 wallet_registrations");
         for (const wallet_registration of wallet_registrations) {
           try {
-            await v2Requests(wallet_registration, "wallet_registrations");
+            await v2Requests(
+              { ...wallet_registration, key },
+              "wallet_registrations"
+            );
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, wallet_registration);
@@ -106,7 +110,10 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("processing v2 device_configurations");
         for (const device_configuration of device_configurations) {
           try {
-            await v2Requests(device_configuration, "device_configurations");
+            await v2Requests(
+              { ...device_configuration, key },
+              "device_configurations"
+            );
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, device_configuration);
@@ -120,7 +127,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("processing v2 sessions");
         for (const session of sessions) {
           try {
-            await v2Requests(session, "sessions", true);
+            await v2Requests({ ...session, key }, "sessions", true);
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, session);
@@ -134,7 +141,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("processing v2 captures");
         for (const capture of captures) {
           try {
-            await v2Requests(capture, "captures");
+            await v2Requests({ ...capture, key }, "captures");
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, capture);
@@ -148,7 +155,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("v2 messages");
         for (const message of messages) {
           try {
-            await v2Requests(message, "messages", true);
+            await v2Requests({ ...message, key }, "messages", true);
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, message);
@@ -164,7 +171,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("processing v1 registrations");
         for (let planter of bulkData.registrations) {
           try {
-            await v1Requests(planter, "planter");
+            await v1Requests({ ...planter, key }, "planter");
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, planter);
@@ -178,7 +185,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("processing v1 devices");
         for (let device of bulkData.devices) {
           try {
-            await v1Requests(device, "device", "PUT");
+            await v1Requests({ ...device, key }, "device", "PUT");
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, device);
@@ -192,7 +199,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("processing v1 trees");
         for (let tree of bulkData.trees) {
           try {
-            await v1Requests(tree, "tree");
+            await v1Requests({ ...tree, key }, "tree");
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, tree);
