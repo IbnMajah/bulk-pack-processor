@@ -1,3 +1,10 @@
+## [1.2.9](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.8...v1.2.9) (2022-05-03)
+
+
+### Bug Fixes
+
+* send key value to the transformers ([e4d43b7](https://github.com/Greenstand/bulk-pack-processor/commit/e4d43b7fa4509eb44ecc7c7e56abed5eaed0ec9d))
+
 ## [1.2.8](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.7...v1.2.8) (2022-04-05)
 
 
