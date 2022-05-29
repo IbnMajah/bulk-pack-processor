@@ -39,5 +39,5 @@ spec:
                 - name: DATA_INPUT_SERVICE_URL_V2
                   value: "http://bulk-pack-transformer-v2.bulk-pack-services/"
           restartPolicy: Never
-          imagePullSecrets:
-            - name: greenstand-docker-secret
+#           imagePullSecrets:
+#             - name: greenstand-docker-secret
