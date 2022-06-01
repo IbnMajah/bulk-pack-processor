@@ -4,6 +4,9 @@ metadata:
   name: bulk-pack-processor
   labels:
     app: bulk-pack-processor
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
 spec:
   schedule: "*/5 * * * *"
   startingDeadlineSeconds: 200
@@ -39,5 +42,3 @@ spec:
                 - name: DATA_INPUT_SERVICE_URL_V2
                   value: "http://bulk-pack-transformer-v2.bulk-pack-services/"
           restartPolicy: Never
-#           imagePullSecrets:
-#             - name: greenstand-docker-secret
