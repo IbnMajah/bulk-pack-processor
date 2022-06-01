@@ -2,7 +2,6 @@ bases:
   - ../../base
 patchesStrategicMerge:
   - database-connection-sealed-secret.yaml
-  - bulk-pack-processor-deployment.yaml
 images:
   - name: greenstand/bulk-pack-processor
     newTag: 1.2.9
