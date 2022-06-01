@@ -11,7 +11,7 @@ env:
   project-directory: ./
 
 jobs:
-  deploy-test:
+  deploy-prod:
     name: Deploy latest to prod environment, requires approval
     runs-on: ubuntu-latest
     if: |
