@@ -1,3 +1,12 @@
+## [1.2.10](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.9...v1.2.10) (2022-07-10)
+
+
+### Bug Fixes
+
+* add process.exit(1) if there are failing bulk packs ([736f6ae](https://github.com/Greenstand/bulk-pack-processor/commit/736f6ae1433bb8bb2a79ba02ae8049f6e6838d47))
+* dependencies ([8143c02](https://github.com/Greenstand/bulk-pack-processor/commit/8143c02805038c8abeb6f77c04424de1c5751eb6))
+* package.json dependencies ([ff1db20](https://github.com/Greenstand/bulk-pack-processor/commit/ff1db2018985073bb0fabe7b9001fd94f3228629))
+
 ## [1.2.9](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.8...v1.2.9) (2022-05-03)
 
 
