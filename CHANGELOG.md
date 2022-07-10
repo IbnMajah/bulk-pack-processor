@@ -1,3 +1,10 @@
+## [1.2.11](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.10...v1.2.11) (2022-07-10)
+
+
+### Bug Fixes
+
+* do not await pool.end ([90b742c](https://github.com/Greenstand/bulk-pack-processor/commit/90b742cc11f60ac1219cde65fd5205e462b24e55))
+
 ## [1.2.10](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.9...v1.2.10) (2022-07-10)
 
 
