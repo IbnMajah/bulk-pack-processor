@@ -227,7 +227,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
     console.log(`Processed bulk tree upload ${row.id}`);
   }
   console.log("done");
-  await pool.end();
+  pool.end();
 
   failingBulkPacks ? process.exit(1) : process.exit(0);
   process.exit(0);
