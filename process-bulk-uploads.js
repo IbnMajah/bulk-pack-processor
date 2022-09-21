@@ -74,7 +74,6 @@ const v1Requests = async (data, endpoint, httpVerb) => {
     ORDER BY KEY ASC`,
   };
   const rval = await pool.query(query);
-  let failingBulkPacks = false;
 
   for (let row of rval.rows) {
     let shouldBeProcessed = true;
@@ -221,15 +220,12 @@ const v1Requests = async (data, endpoint, httpVerb) => {
     console.log("update");
     if (shouldBeProcessed) {
       await pool.query(update);
-    } else {
-      failingBulkPacks = true;
     }
     console.log(`Processed bulk tree upload ${row.id}`);
   }
   console.log("done");
   pool.end();
 
-  failingBulkPacks ? process.exit(1) : process.exit(0);
   process.exit(0);
 })().catch((e) => {
   console.log(e);
