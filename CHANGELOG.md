@@ -1,3 +1,10 @@
+## [1.2.12](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.11...v1.2.12) (2022-09-21)
+
+
+### Bug Fixes
+
+* remove process.exit(1) ([f588f85](https://github.com/Greenstand/bulk-pack-processor/commit/f588f8525997811ce19860c0ef47fa5aa9c677ed))
+
 ## [1.2.11](https://github.com/Greenstand/bulk-pack-processor/compare/v1.2.10...v1.2.11) (2022-07-10)
 
 
