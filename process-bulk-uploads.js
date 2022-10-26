@@ -1,9 +1,5 @@
 require("dotenv").config();
-const {
-  connectionString,
-  dataInputMicroserviceURI,
-  dataInputMicroserviceURIV2,
-} = require("./config/config");
+const { connectionString, dataInputMicroserviceURI, dataInputMicroserviceURIV2 } = require("./config/config");
 const axios = require("axios").default;
 const { Pool } = require("pg");
 
@@ -62,7 +58,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
   };
 
   // send data to both v1 and v2
-  await axios(optionsV2);
+  // await axios(optionsV2);
   await axios(optionsV1);
 };
 
@@ -79,7 +75,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
     let shouldBeProcessed = true;
     console.log("processing key: " + row.key);
     const key = row.key;
-    const bulkData = row.bulk_data;
+    var bulkData = row.bulk_data;
 
     if (bulkData.pack_format_version === "2") {
       console.log("bulk pack format version 2 detected");
@@ -93,10 +89,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("processing v2 wallet_registrations");
         for (const wallet_registration of wallet_registrations) {
           try {
-            await v2Requests(
-              { ...wallet_registration, key },
-              "wallet_registrations"
-            );
+            await v2Requests({ ...wallet_registration, key }, "wallet_registrations");
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, wallet_registration);
@@ -110,10 +103,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
         console.log("processing v2 device_configurations");
         for (const device_configuration of device_configurations) {
           try {
-            await v2Requests(
-              { ...device_configuration, key },
-              "device_configurations"
-            );
+            await v2Requests({ ...device_configuration, key }, "device_configurations");
           } catch (e) {
             shouldBeProcessed = false;
             errorHandler(e, device_configuration);
@@ -167,6 +157,7 @@ const v1Requests = async (data, endpoint, httpVerb) => {
     } else {
       // Version 1
       console.log("bulk pack format version 1 detected");
+      bulkData = JSON.parse(bulkData);
       if (bulkData.registrations?.length) {
         console.log("processing v1 registrations");
         for (let planter of bulkData.registrations) {
